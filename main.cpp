@@ -2,11 +2,12 @@
 
 int main (int argc, char** argv)
 {
-    A* pointeru;
-    pointeru = nullptr;
-    pointeru = B::getPokPok();
-    cout <<"hi"<<'\n';
+    Device* pointer;
+    pointer = nullptr;
+    pointer = MicroDLSDevice::getCurrentDevice();
 
-    A* dynamic_cast <B*> (pointeru)->currentPokPok->baz();
+    auto newpointer = dynamic_cast<MicroDLSDevice*>(pointer);
+    cout << newpointer << "  " << pointer << '\n';
+
     return 0;
 }

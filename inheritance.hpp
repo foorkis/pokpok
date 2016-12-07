@@ -2,20 +2,29 @@
 using std::cin;
 using std::cout;
 
-class A
+class Device
 {
 public:
     virtual int foo();
     virtual int bar();
 protected:
-    static A* currentPokPok;
+    static Device* currentDevice;
 };
 
-class B: public A
+class DLSDevice: public Device
+{
+public:
+    virtual int foo();
+    virtual int bar();
+    int quux();
+    static Device* getCurrentDevice();
+};
+
+class MicroDLSDevice: public Device
 {
 public:
     virtual int foo();
     virtual int bar();
     int baz();
-    static A* getPokPok();
+    static Device* getCurrentDevice();
 };
