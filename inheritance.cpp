@@ -1,19 +1,23 @@
 #include "inheritance.hpp"
 
 //singleton magic
-A* A::currentPokPok = NULL;
+Device* Device::currentDevice = NULL;
 
-int A::foo(){}
-int A::bar(){}
+int Device::foo(){}
+int Device::bar(){}
 
-int B::foo(){}
-int B::bar(){}
-int B::baz(){cout << "baz"; return 0;}
+int MicroDLSDevice::foo(){}
+int MicroDLSDevice::bar(){}
+int MicroDLSDevice::baz(){cout << "baz"; return 0;}
 
-A* B::getPokPok()
+int DLSDevice::foo(){}
+int DLSDevice::bar(){}
+int DLSDevice::quux(){cout << "baz"; return 0;}
+
+Device* MicroDLSDevice::getCurrentDevice()
 {
-    if (A::currentPokPok == NULL){
-        A::currentPokPok = new B();
+    if (Device::currentDevice == NULL){
+        Device::currentDevice = new MicroDLSDevice();
     }
-    return A::currentPokPok;
+    return Device::currentDevice;
 }
