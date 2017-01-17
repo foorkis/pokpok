@@ -8,11 +8,11 @@ int Device::bar(){}
 
 int MicroDLSDevice::foo(){}
 int MicroDLSDevice::bar(){}
-int MicroDLSDevice::baz(){cout << "baz"; return 0;}
+int MicroDLSDevice::baz(){cout << "baz, currentDevice = " << currentDevice << '\n'; return 0;}
 
 int DLSDevice::foo(){}
 int DLSDevice::bar(){}
-int DLSDevice::quux(){cout << "baz"; return 0;}
+int DLSDevice::quux(){cout << "quux, currentDevice = " << currentDevice << '\n'; return 0;}
 
 Device* MicroDLSDevice::getCurrentDevice()
 {
